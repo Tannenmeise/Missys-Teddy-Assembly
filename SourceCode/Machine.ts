@@ -9,13 +9,8 @@ namespace game {
 
         public index: number;
         public productionTime: number = machineTime;
-<<<<<<< HEAD:game/SourceCode/Machine.ts
         public cmpAudWorking: f.ComponentAudio = new f.ComponentAudio(new f.Audio("../Assets/Machine_Working.wav"), true, false);
         public cmpAudFinished: f.ComponentAudio = new f.ComponentAudio(new f.Audio("../Assets/Machine_Finished.wav"), false, false);
-=======
-        public cmpAudWorking: f.ComponentAudio = new f.ComponentAudio(new f.Audio("/game/Assets/Machine_Working.wav"), true, false);
-        public cmpAudFinished: f.ComponentAudio = new f.ComponentAudio(new f.Audio("/game/Assets/Machine_Finished.wav"), false, false);
->>>>>>> dbbcfb80a712bc7eb0f32c204f042586f77680b4:game/Machine.ts
         public cmpStateMachine: ComponentStateMachineMachine;
 
 

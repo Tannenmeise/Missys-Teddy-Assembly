@@ -13,17 +13,11 @@ namespace game {
         public failed: boolean = false;
         public successful: boolean = false;
         public mood: GameObject = new GameObject("Mood", new f.Vector2(0.4, 0.5), f.Vector3.Y(1.5), f.Vector3.ZERO());
-<<<<<<< HEAD:game/SourceCode/Customer.ts
         public cmpAudAngry: f.ComponentAudio = new f.ComponentAudio(new f.Audio("../Assets/Customer_Angry.wav"), false, false);
         public cmpAudGrunt: f.ComponentAudio = new f.ComponentAudio(new f.Audio("../Assets/Customer_Grunt.wav"), false, false);
         public cmpAudDeny: f.ComponentAudio = new f.ComponentAudio(new f.Audio("../Assets/Customer_Deny.wav"), false, false);
         public cmpAudAccept: f.ComponentAudio = new f.ComponentAudio(new f.Audio("../Assets/Customer_Accept.wav"), false, false);
-=======
-        public cmpAudAngry: f.ComponentAudio = new f.ComponentAudio(new f.Audio("/game/Assets/Customer_Angry.wav"), false, false);
-        public cmpAudGrunt: f.ComponentAudio = new f.ComponentAudio(new f.Audio("/game/Assets/Customer_Grunt.wav"), false, false);
-        public cmpAudDeny: f.ComponentAudio = new f.ComponentAudio(new f.Audio("/game/Assets/Customer_Deny.wav"), false, false);
-        public cmpAudAccept: f.ComponentAudio = new f.ComponentAudio(new f.Audio("/game/Assets/Customer_Accept.wav"), false, false);
->>>>>>> dbbcfb80a712bc7eb0f32c204f042586f77680b4:game/Customer.ts
+
         public cmpStateMachine: ComponentStateMachineCustomer;
 
 
@@ -103,11 +97,7 @@ namespace game {
                 let randomNumber: number = Math.floor(Math.random() * 4 + 1);
                 if (!collectedBooster && randomNumber == 4) {
                     collectedBooster = true;
-<<<<<<< HEAD:game/SourceCode/Customer.ts
                     (<HTMLImageElement>document.getElementById("boosterImg")).src = "../Assets/Booster.png";
-=======
-                    (<HTMLImageElement>document.getElementById("boosterImg")).src = "/game/Assets/Booster.png";
->>>>>>> dbbcfb80a712bc7eb0f32c204f042586f77680b4:game/Customer.ts
                 }
             }
         }

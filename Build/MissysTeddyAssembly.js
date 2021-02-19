@@ -82,17 +82,10 @@ var game;
             this.failed = false;
             this.successful = false;
             this.mood = new game.GameObject("Mood", new f.Vector2(0.4, 0.5), f.Vector3.Y(1.5), f.Vector3.ZERO());
-<<<<<<< HEAD:game/Build/MissysTeddyAssembly.js
             this.cmpAudAngry = new f.ComponentAudio(new f.Audio("../Assets/Customer_Angry.wav"), false, false);
             this.cmpAudGrunt = new f.ComponentAudio(new f.Audio("../Assets/Customer_Grunt.wav"), false, false);
             this.cmpAudDeny = new f.ComponentAudio(new f.Audio("../Assets/Customer_Deny.wav"), false, false);
             this.cmpAudAccept = new f.ComponentAudio(new f.Audio("../Assets/Customer_Accept.wav"), false, false);
-=======
-            this.cmpAudAngry = new f.ComponentAudio(new f.Audio("/game/Assets/Customer_Angry.wav"), false, false);
-            this.cmpAudGrunt = new f.ComponentAudio(new f.Audio("/game/Assets/Customer_Grunt.wav"), false, false);
-            this.cmpAudDeny = new f.ComponentAudio(new f.Audio("/game/Assets/Customer_Deny.wav"), false, false);
-            this.cmpAudAccept = new f.ComponentAudio(new f.Audio("/game/Assets/Customer_Accept.wav"), false, false);
->>>>>>> dbbcfb80a712bc7eb0f32c204f042586f77680b4:game/Main.js
             let cmpMaterial = new f.ComponentMaterial(_material);
             cmpMaterial.pivot.scale(f.Vector2.ONE(1));
             this.addComponent(cmpMaterial);
@@ -154,11 +147,7 @@ var game;
                 let randomNumber = Math.floor(Math.random() * 4 + 1);
                 if (!game.collectedBooster && randomNumber == 4) {
                     game.collectedBooster = true;
-<<<<<<< HEAD:game/Build/MissysTeddyAssembly.js
                     document.getElementById("boosterImg").src = "../Assets/Booster.png";
-=======
-                    document.getElementById("boosterImg").src = "/game/Assets/Booster.png";
->>>>>>> dbbcfb80a712bc7eb0f32c204f042586f77680b4:game/Main.js
                 }
             }
         }
@@ -182,13 +171,8 @@ var game;
         constructor(_name, _size, _position, _rotation, _material) {
             super(_name, _size, _position, _rotation);
             this.productionTime = game.machineTime;
-<<<<<<< HEAD:game/Build/MissysTeddyAssembly.js
             this.cmpAudWorking = new f.ComponentAudio(new f.Audio("../Assets/Machine_Working.wav"), true, false);
             this.cmpAudFinished = new f.ComponentAudio(new f.Audio("../Assets/Machine_Finished.wav"), false, false);
-=======
-            this.cmpAudWorking = new f.ComponentAudio(new f.Audio("/game/Assets/Machine_Working.wav"), true, false);
-            this.cmpAudFinished = new f.ComponentAudio(new f.Audio("/game/Assets/Machine_Finished.wav"), false, false);
->>>>>>> dbbcfb80a712bc7eb0f32c204f042586f77680b4:game/Main.js
             let cmpMaterial = new f.ComponentMaterial(_material);
             cmpMaterial.pivot.scale(f.Vector2.ONE(1));
             this.addComponent(cmpMaterial);
@@ -298,7 +282,6 @@ var game;
     let activeBooster = false;
     game.collectedBooster = false;
     let boosterTimer = new f.Time;
-<<<<<<< HEAD:game/Build/MissysTeddyAssembly.js
     game.boosterSound = new f.ComponentAudio(new f.Audio("../Assets/Booster.wav"), false, false);
     root.addComponent(game.boosterSound);
     // #endregion (BOOSTER)
@@ -318,37 +301,12 @@ var game;
         let meshQuad = new f.MeshQuad("Quad");
         // #region (ROOM)
         let txtFloor = new f.TextureImage("../Assets/Floor.png");
-=======
-    game.boosterSound = new f.ComponentAudio(new f.Audio("/game/Assets/Booster.wav"), false, false);
-    root.addComponent(game.boosterSound);
-    // #endregion (BOOSTER)
-    let backgroundMusic = new f.ComponentAudio(new f.Audio("/game/Assets/BackgroundMusic.wav"), true);
-    root.addComponent(backgroundMusic);
-    let menuMusic = new f.ComponentAudio(new f.Audio("/game/Assets/MenuMusic.wav"), true, true);
-    root.addComponent(menuMusic);
-    let newCustomerAud = new f.ComponentAudio(new f.Audio("/game/Assets/NewCustomer.wav"));
-    root.addComponent(newCustomerAud);
-    let moneySound = new f.ComponentAudio(new f.Audio("/game/Assets/Money.wav"), false, false);
-    root.addComponent(moneySound);
-    let finishSound = new f.ComponentAudio(new f.Audio("/game/Assets/Finish.wav"), false, false);
-    root.addComponent(finishSound);
-    async function hndLoad(_event) {
-        await communicate("/game/Difficulties.json");
-        const canvas = document.querySelector("canvas");
-        let meshQuad = new f.MeshQuad("Quad");
-        // #region (ROOM)
-        let txtFloor = new f.TextureImage("/game/Assets/Floor.png");
->>>>>>> dbbcfb80a712bc7eb0f32c204f042586f77680b4:game/Main.js
         let mtrFloor = new f.Material("Floor", f.ShaderTexture, new f.CoatTextured(game.clrWhite, txtFloor));
         let floor = new faid.Node("Floor", f.Matrix4x4.ROTATION_X(-90), mtrFloor, meshQuad);
         floor.mtxLocal.scale(f.Vector3.ONE(game.sizeWall * game.numWalls));
         floor.getComponent(f.ComponentMaterial).pivot.scale(f.Vector2.ONE(game.numWalls));
         building.appendChild(floor);
-<<<<<<< HEAD:game/Build/MissysTeddyAssembly.js
         let txtCeiling = new f.TextureImage("../Assets/Ceiling.png");
-=======
-        let txtCeiling = new f.TextureImage("/game/Assets/Ceiling.png");
->>>>>>> dbbcfb80a712bc7eb0f32c204f042586f77680b4:game/Main.js
         let mtrCeiling = new f.Material("Floor", f.ShaderTexture, new f.CoatTextured(game.clrWhite, txtCeiling));
         let ceiling = new faid.Node("Floor", f.Matrix4x4.TRANSLATION(new f.Vector3(0, game.sizeWall, 0)), mtrCeiling, meshQuad);
         ceiling.mtxLocal.rotateX(90);
@@ -364,20 +322,12 @@ var game;
         game.machines = createMachines();
         root.appendChild(game.machines);
         // #region (CASH REGISTER)
-<<<<<<< HEAD:game/Build/MissysTeddyAssembly.js
         let txtCashRegisterBF = new f.TextureImage("../Assets/CashRegister_BaseFront.png");
-=======
-        let txtCashRegisterBF = new f.TextureImage("/game/Assets/CashRegister_BaseFront.png");
->>>>>>> dbbcfb80a712bc7eb0f32c204f042586f77680b4:game/Main.js
         let mtrCashRegisterBF = new f.Material("CashRegister", f.ShaderTexture, new f.CoatTextured(game.clrWhite, txtCashRegisterBF));
         let cmpMtrCashRegister = new f.ComponentMaterial(mtrCashRegisterBF);
         let cashRegister = new game.GameObject("CashRegister", new f.Vector2(0.555, 0.138), new f.Vector3(-game.sizeWall * game.numWalls / 2 + 4, 1.069, -8.125), f.Vector3.ONE(0));
         cashRegister.addComponent(cmpMtrCashRegister);
-<<<<<<< HEAD:game/Build/MissysTeddyAssembly.js
         let txtCashRegisterBS = new f.TextureImage("../Assets/CashRegister_BaseSide.png");
-=======
-        let txtCashRegisterBS = new f.TextureImage("/game/Assets/CashRegister_BaseSide.png");
->>>>>>> dbbcfb80a712bc7eb0f32c204f042586f77680b4:game/Main.js
         let mtrCashRegisterBS = new f.Material("CashRegister", f.ShaderTexture, new f.CoatTextured(game.clrWhite, txtCashRegisterBS));
         let cashRegisterBL = new game.GameObject("CashRegister", new f.Vector2(0.555, 0.238), new f.Vector3(-0.277, 0.05, -0.277), f.Vector3.Y(90));
         let cmpMtrCashRegisterBL = new f.ComponentMaterial(mtrCashRegisterBS);
@@ -387,21 +337,13 @@ var game;
         let cmpMtrCashRegisterBR = new f.ComponentMaterial(mtrCashRegisterBS);
         cashRegisterBR.addComponent(cmpMtrCashRegisterBR);
         cashRegister.appendChild(cashRegisterBR);
-<<<<<<< HEAD:game/Build/MissysTeddyAssembly.js
         let txtCashRegisterBT = new f.TextureImage("../Assets/CashRegister_BaseTop.png");
-=======
-        let txtCashRegisterBT = new f.TextureImage("/game/Assets/CashRegister_BaseTop.png");
->>>>>>> dbbcfb80a712bc7eb0f32c204f042586f77680b4:game/Main.js
         let mtrCashRegisterBT = new f.Material("CashRegister", f.ShaderTexture, new f.CoatTextured(game.clrWhite, txtCashRegisterBT));
         let cashRegisterBT = new game.GameObject("CashRegister", new f.Vector2(0.555, 0.555), new f.Vector3(0, 0.116, -0.277), f.Vector3.X(-80));
         let cmpMtrCashRegisterBT = new f.ComponentMaterial(mtrCashRegisterBT);
         cashRegisterBT.addComponent(cmpMtrCashRegisterBT);
         cashRegister.appendChild(cashRegisterBT);
-<<<<<<< HEAD:game/Build/MissysTeddyAssembly.js
         let txtCashRegisterF = new f.TextureImage("../Assets/CashRegister_Front.png");
-=======
-        let txtCashRegisterF = new f.TextureImage("/game/Assets/CashRegister_Front.png");
->>>>>>> dbbcfb80a712bc7eb0f32c204f042586f77680b4:game/Main.js
         let mtrCashRegisterF = new f.Material("CashRegister", f.ShaderTexture, new f.CoatTextured(game.clrWhite, txtCashRegisterF));
         let cashRegisterF = new game.GameObject("CashRegister", new f.Vector2(0.555, 0.139), new f.Vector3(0, 0.23, -0.555), f.Vector3.ZERO());
         let cmpMtrCashRegisterF = new f.ComponentMaterial(mtrCashRegisterF);
@@ -410,11 +352,7 @@ var game;
         root.appendChild(cashRegister);
         // #endregion (CASH REGISTER)
         // #region (TRASHCAN)
-<<<<<<< HEAD:game/Build/MissysTeddyAssembly.js
         let txtTrashcan = new f.TextureImage("../Assets/Trashcan_Side.png");
-=======
-        let txtTrashcan = new f.TextureImage("/game/Assets/Trashcan_Side.png");
->>>>>>> dbbcfb80a712bc7eb0f32c204f042586f77680b4:game/Main.js
         let mtrTrashcan = new f.Material("Trashcan", f.ShaderTexture, new f.CoatTextured(game.clrWhite, txtTrashcan));
         trashcan = new game.GameObject("Trashcan", new f.Vector2(0.75, 1), new f.Vector3(game.sizeWall * game.numWalls / 2 - 1.5, 0.5, -8), f.Vector3.ZERO());
         let cmpMtrTrashcan = new f.ComponentMaterial(mtrTrashcan);
@@ -428,11 +366,7 @@ var game;
         trashcanR.addComponent(cmpMtrTrashcanR);
         trashcan.appendChild(trashcanR);
         let trashcanT = new game.GameObject("Trashcan_t", new f.Vector2(0.75, 0.75), new f.Vector3(0, 0.5, -0.375), f.Vector3.X(90));
-<<<<<<< HEAD:game/Build/MissysTeddyAssembly.js
         let txtTrashcanT = new f.TextureImage("../Assets/Trashcan_Top.png");
-=======
-        let txtTrashcanT = new f.TextureImage("/game/Assets/Trashcan_Top.png");
->>>>>>> dbbcfb80a712bc7eb0f32c204f042586f77680b4:game/Main.js
         let mtrTrashcanT = new f.Material("Trashcan", f.ShaderTexture, new f.CoatTextured(game.clrWhite, txtTrashcanT));
         let cmpMtrTrashcanT = new f.ComponentMaterial(mtrTrashcanT);
         trashcanT.addComponent(cmpMtrTrashcanT);
@@ -441,11 +375,7 @@ var game;
         // #endregion (TRASHCAN)
         // #region (INSTRUCTIONS)
         instructions = new game.GameObject("Instructions", new f.Vector2(0.6, 1), new f.Vector3(-game.sizeWall * game.numWalls / 2 + 0.001, 1.5, 0), f.Vector3.Y(90));
-<<<<<<< HEAD:game/Build/MissysTeddyAssembly.js
         let txtInstructions = new f.TextureImage("../Assets/Instructions.png");
-=======
-        let txtInstructions = new f.TextureImage("/game/Assets/Instructions.png");
->>>>>>> dbbcfb80a712bc7eb0f32c204f042586f77680b4:game/Main.js
         let mtrInstructions = new f.Material("Instructions", f.ShaderTexture, new f.CoatTextured(game.clrWhite, txtInstructions));
         let cmpMtrInstructions = new f.ComponentMaterial(mtrInstructions);
         instructions.addComponent(cmpMtrInstructions);
@@ -594,11 +524,7 @@ var game;
     }
     function createWalls() {
         let walls = new f.Node("Walls");
-<<<<<<< HEAD:game/Build/MissysTeddyAssembly.js
         let txtWall = new f.TextureImage("../Assets/Wall.png");
-=======
-        let txtWall = new f.TextureImage("/game/Assets/Wall.png");
->>>>>>> dbbcfb80a712bc7eb0f32c204f042586f77680b4:game/Main.js
         let mtrWall = new f.Material("Wall", f.ShaderTexture, new f.CoatTextured(game.clrWhite, txtWall));
         for (let i = -game.numWalls / 2 + 0.5; i < game.numWalls / 2; i++) {
             walls.appendChild(new game.Wall(f.Vector2.ONE(game.sizeWall), f.Vector3.SCALE(new f.Vector3(-game.numWalls / 2, 0.5, i), game.sizeWall), f.Vector3.Y(90), mtrWall)); // left
@@ -609,7 +535,6 @@ var game;
             walls.appendChild(new game.Wall(f.Vector2.ONE(game.sizeWall), f.Vector3.SCALE(new f.Vector3(i, 0.5, game.numWalls / 2 - 1), game.sizeWall), f.Vector3.Y(180))); // invisible back (machines)
         }
         // front:
-<<<<<<< HEAD:game/Build/MissysTeddyAssembly.js
         let txtDoor = new f.TextureImage("../Assets/Door.png");
         let mtrDoor = new f.Material("Door", f.ShaderTexture, new f.CoatTextured(game.clrWhite, txtDoor));
         walls.appendChild(new game.Wall(f.Vector2.ONE(game.sizeWall), f.Vector3.SCALE(new f.Vector3(-game.numWalls / 2 + 0.5, 0.5, -game.numWalls / 2), game.sizeWall), f.Vector3.Y(0), mtrDoor)); // door
@@ -617,15 +542,6 @@ var game;
         let txtWindowL = new f.TextureImage("../Assets/Window_L.png");
         let mtrWindowL = new f.Material("WindowL", f.ShaderTexture, new f.CoatTextured(game.clrWhite, txtWindowL));
         let txtWindowR = new f.TextureImage("../Assets/Window_R.png");
-=======
-        let txtDoor = new f.TextureImage("/game/Assets/Door.png");
-        let mtrDoor = new f.Material("Door", f.ShaderTexture, new f.CoatTextured(game.clrWhite, txtDoor));
-        walls.appendChild(new game.Wall(f.Vector2.ONE(game.sizeWall), f.Vector3.SCALE(new f.Vector3(-game.numWalls / 2 + 0.5, 0.5, -game.numWalls / 2), game.sizeWall), f.Vector3.Y(0), mtrDoor)); // door
-        walls.appendChild(new game.Wall(f.Vector2.ONE(game.sizeWall), f.Vector3.SCALE(new f.Vector3(-game.numWalls / 2 + 1.5, 0.5, -game.numWalls / 2), game.sizeWall), f.Vector3.Y(0), mtrWall)); // wall
-        let txtWindowL = new f.TextureImage("/game/Assets/Window_L.png");
-        let mtrWindowL = new f.Material("WindowL", f.ShaderTexture, new f.CoatTextured(game.clrWhite, txtWindowL));
-        let txtWindowR = new f.TextureImage("/game/Assets/Window_R.png");
->>>>>>> dbbcfb80a712bc7eb0f32c204f042586f77680b4:game/Main.js
         let mtrWindowR = new f.Material("WindowR", f.ShaderTexture, new f.CoatTextured(game.clrWhite, txtWindowR));
         walls.appendChild(new game.Wall(f.Vector2.ONE(game.sizeWall), f.Vector3.SCALE(new f.Vector3(-game.numWalls / 2 + 2.5, 0.5, -game.numWalls / 2), game.sizeWall), f.Vector3.Y(0), mtrWindowL)); // windowL
         walls.appendChild(new game.Wall(f.Vector2.ONE(game.sizeWall), f.Vector3.SCALE(new f.Vector3(-game.numWalls / 2 + 3.5, 0.5, -game.numWalls / 2), game.sizeWall), f.Vector3.Y(0), mtrWindowR)); // windowR
@@ -637,15 +553,9 @@ var game;
     }
     function createCounter() {
         let counter = new f.Node("Counter");
-<<<<<<< HEAD:game/Build/MissysTeddyAssembly.js
         let txtCounterSide = new f.TextureImage("../Assets/CounterSide.png");
         let mtrCounterSide = new f.Material("CounterSide", f.ShaderTexture, new f.CoatTextured(game.clrWhite, txtCounterSide));
         let txtCounterTop = new f.TextureImage("../Assets/CounterTop.png");
-=======
-        let txtCounterSide = new f.TextureImage("/game/Assets/CounterSide.png");
-        let mtrCounterSide = new f.Material("CounterSide", f.ShaderTexture, new f.CoatTextured(game.clrWhite, txtCounterSide));
-        let txtCounterTop = new f.TextureImage("/game/Assets/CounterTop.png");
->>>>>>> dbbcfb80a712bc7eb0f32c204f042586f77680b4:game/Main.js
         let mtrCounterTop = new f.Material("CounterTop", f.ShaderTexture, new f.CoatTextured(game.clrWhite, txtCounterTop));
         for (let i = -game.numWalls * game.sizeWall / 3 - 0.5; i < game.numWalls * game.sizeWall / 3 + 1; i++) {
             counter.appendChild(new game.Counter(new f.Vector2(1, 1), new f.Vector3(i, 0.5, -8), new f.Vector3(0, 0, 0), mtrCounterSide)); // front
@@ -657,15 +567,9 @@ var game;
     }
     function createMachines() {
         let machines = new f.Node("Machines");
-<<<<<<< HEAD:game/Build/MissysTeddyAssembly.js
         let txtMachine = new f.TextureImage("../Assets/Machine.png");
         let mtrMachine = new f.Material("Appearance", f.ShaderTexture, new f.CoatTextured(game.clrWhite, txtMachine));
         let txtMachineSide = new f.TextureImage("../Assets/Machine_Side.png");
-=======
-        let txtMachine = new f.TextureImage("/game/Assets/Machine.png");
-        let mtrMachine = new f.Material("Appearance", f.ShaderTexture, new f.CoatTextured(game.clrWhite, txtMachine));
-        let txtMachineSide = new f.TextureImage("/game/Assets/Machine_Side.png");
->>>>>>> dbbcfb80a712bc7eb0f32c204f042586f77680b4:game/Main.js
         let mtrMachineSide = new f.Material("Appearance", f.ShaderTexture, new f.CoatTextured(game.clrWhite, txtMachineSide));
         for (let i = 0; i < 4; i++) {
             machines.appendChild(new game.Machine("Machine_" + (i + 1), new f.Vector2(2, 2), new f.Vector3(-9 + i * 6, 1, 10), f.Vector3.Y(180), mtrMachine)); // front
@@ -675,13 +579,8 @@ var game;
             if (i < 3) {
                 let conveyorBeltTop = new game.GameObject("ConveyorBelt", new f.Vector2(4, 1), new f.Vector3(-6 + i * 6, 1, 11), new f.Vector3(-90, 180, 0));
                 let conveyorBeltFront = new game.GameObject("ConveyorBelt", new f.Vector2(4, 0.5), new f.Vector3(-6 + i * 6, 0.75, 10.5), f.Vector3.Y(180));
-<<<<<<< HEAD:game/Build/MissysTeddyAssembly.js
                 let txtTop = new f.TextureImage("../Assets/ConveyorBelt_Top.png");
                 let txtFront = new f.TextureImage("../Assets/ConveyorBelt_Front.png");
-=======
-                let txtTop = new f.TextureImage("/game/Assets/ConveyorBelt_Top.png");
-                let txtFront = new f.TextureImage("/game/Assets/ConveyorBelt_Front.png");
->>>>>>> dbbcfb80a712bc7eb0f32c204f042586f77680b4:game/Main.js
                 let mtrTop = new f.Material("Appearance", f.ShaderTexture, new f.CoatTextured(game.clrWhite, txtTop));
                 let mtrFront = new f.Material("Appearance", f.ShaderTexture, new f.CoatTextured(game.clrWhite, txtFront));
                 let cmpMtrTop = new f.ComponentMaterial(mtrTop);
@@ -873,11 +772,7 @@ var game;
     }
     function generateCustomer() {
         let randomAppearance = Math.floor(Math.random() * 6 + 1); // generates number from 1 - 6
-<<<<<<< HEAD:game/Build/MissysTeddyAssembly.js
         let txtCustomer = new f.TextureImage("../Assets/Customer_" + randomAppearance + ".png");
-=======
-        let txtCustomer = new f.TextureImage("/game/Assets/Customer_" + randomAppearance + ".png");
->>>>>>> dbbcfb80a712bc7eb0f32c204f042586f77680b4:game/Main.js
         let mtrCustomer = new f.Material("Appearance", f.ShaderTexture, new f.CoatTextured(game.clrWhite, txtCustomer));
         let customer = new game.Customer(new f.Vector2(1, 2), new f.Vector3(-10.5, 1, -10), new f.Vector3(0, 0, 0), mtrCustomer);
         customer.posTarget = customerPositions[index];
@@ -900,11 +795,7 @@ var game;
         return positions;
     }
     function updateClock() {
-<<<<<<< HEAD:game/Build/MissysTeddyAssembly.js
         document.getElementById("clockImg").src = "../Assets/Clock" + clock + ".png";
-=======
-        document.getElementById("clockImg").src = "/game/Assets/Clock" + clock + ".png";
->>>>>>> dbbcfb80a712bc7eb0f32c204f042586f77680b4:game/Main.js
         if (clock == 6)
             endGame();
     }
@@ -916,11 +807,7 @@ var game;
                 currentMachine.productionTime = game.machineTime * 0.3;
             }
             activeBooster = true;
-<<<<<<< HEAD:game/Build/MissysTeddyAssembly.js
             document.getElementById("boosterImg").src = "../Assets/Booster_Active.png";
-=======
-            document.getElementById("boosterImg").src = "/game/Assets/Booster_Active.png";
->>>>>>> dbbcfb80a712bc7eb0f32c204f042586f77680b4:game/Main.js
             boosterTimer.set(0);
         }
     }
@@ -931,11 +818,7 @@ var game;
                 currentMachine.productionTime = game.machineTime;
             }
             activeBooster = false;
-<<<<<<< HEAD:game/Build/MissysTeddyAssembly.js
             document.getElementById("boosterImg").src = "../Assets/Booster_Empty.png";
-=======
-            document.getElementById("boosterImg").src = "/game/Assets/Booster_Empty.png";
->>>>>>> dbbcfb80a712bc7eb0f32c204f042586f77680b4:game/Main.js
             game.collectedBooster = false;
         }
     }
@@ -1030,11 +913,7 @@ var game;
                 });
                 setup.setTransition(game.ACTION.ENTERING, game.ACTION.WAITING_HAPPY, (_machine) => {
                     let container = _machine.getContainer();
-<<<<<<< HEAD:game/Build/MissysTeddyAssembly.js
                     let txtMood = new f.TextureImage("../Assets/Customer_Mood_Happy.png");
-=======
-                    let txtMood = new f.TextureImage("/game/Assets/Customer_Mood_Happy.png");
->>>>>>> dbbcfb80a712bc7eb0f32c204f042586f77680b4:game/Main.js
                     let mtrMood = new f.Material("Mood", f.ShaderTexture, new f.CoatTextured(game.clrWhite, txtMood));
                     let cmpMtrMood = new f.ComponentMaterial(mtrMood);
                     container.mood.addComponent(cmpMtrMood);
@@ -1048,11 +927,7 @@ var game;
                 setup.setTransition(game.ACTION.WAITING_HAPPY, game.ACTION.WAITING_ANGRY, (_machine) => {
                     let container = _machine.getContainer();
                     container.mood.removeComponent(container.mood.getComponent(f.ComponentMaterial));
-<<<<<<< HEAD:game/Build/MissysTeddyAssembly.js
                     let txtMood = new f.TextureImage("../Assets/Customer_Mood_Angry.png");
-=======
-                    let txtMood = new f.TextureImage("/game/Assets/Customer_Mood_Angry.png");
->>>>>>> dbbcfb80a712bc7eb0f32c204f042586f77680b4:game/Main.js
                     let mtrMood = new f.Material("Mood", f.ShaderTexture, new f.CoatTextured(game.clrWhite, txtMood));
                     let cmpMtrMood = new f.ComponentMaterial(mtrMood);
                     container.mood.addComponent(cmpMtrMood);
@@ -1160,11 +1035,7 @@ var game;
         constructor(_size, _position, _rotation, _option) {
             super("TeddyBear", _size, _position, _rotation);
             this.fur = new f.Node("Fur_" + _option);
-<<<<<<< HEAD:game/Build/MissysTeddyAssembly.js
             let txtTeddyBear = new f.TextureImage("../Assets/Fur_" + _option + ".png");
-=======
-            let txtTeddyBear = new f.TextureImage("/game/Assets/Fur_" + _option + ".png");
->>>>>>> dbbcfb80a712bc7eb0f32c204f042586f77680b4:game/Main.js
             let mtrTeddyBear = new f.Material("Fur", f.ShaderTexture, new f.CoatTextured(clrWhite, txtTeddyBear));
             let cmpMaterial = new f.ComponentMaterial(mtrTeddyBear);
             cmpMaterial.pivot.scale(f.Vector2.ONE(1));
@@ -1173,11 +1044,7 @@ var game;
         }
         addEyecolor(_option) {
             this.eyecolor = new game.GameObject("Eyecolor_" + _option, new f.Vector2(0.118, 0.026), new f.Vector3(0.007, 0.1, 0.001), f.Vector3.ZERO());
-<<<<<<< HEAD:game/Build/MissysTeddyAssembly.js
             let txtEyecolor = new f.TextureImage("../Assets/Eyecolor_" + _option + ".png");
-=======
-            let txtEyecolor = new f.TextureImage("/game/Assets/Eyecolor_" + _option + ".png");
->>>>>>> dbbcfb80a712bc7eb0f32c204f042586f77680b4:game/Main.js
             let mtrEyecolor = new f.Material("Eyecolor", f.ShaderTexture, new f.CoatTextured(clrWhite, txtEyecolor));
             let cmpMtrEyecolor = new f.ComponentMaterial(mtrEyecolor);
             this.eyecolor.addComponent(cmpMtrEyecolor);
@@ -1186,11 +1053,7 @@ var game;
         }
         addAccessory(_option) {
             this.accessory = new game.GameObject("Accessory_" + _option, new f.Vector2(0.1842, 0.125), new f.Vector3(0, -0.042, 0.001), f.Vector3.ZERO());
-<<<<<<< HEAD:game/Build/MissysTeddyAssembly.js
             let txtAccessory = new f.TextureImage("../Assets/Accessory_" + _option + ".png");
-=======
-            let txtAccessory = new f.TextureImage("/game/Assets/Accessory_" + _option + ".png");
->>>>>>> dbbcfb80a712bc7eb0f32c204f042586f77680b4:game/Main.js
             let mtrAccessory = new f.Material("Accessory", f.ShaderTexture, new f.CoatTextured(clrWhite, txtAccessory));
             let cmpMtrAccessory = new f.ComponentMaterial(mtrAccessory);
             this.accessory.addComponent(cmpMtrAccessory);
@@ -1199,11 +1062,7 @@ var game;
         }
         addSound(_option) {
             this.sound = new f.Node("Sound_" + _option);
-<<<<<<< HEAD:game/Build/MissysTeddyAssembly.js
             let cmpAudio = new f.ComponentAudio(new f.Audio("../Assets/Sound_" + _option + ".wav"), false, true);
-=======
-            let cmpAudio = new f.ComponentAudio(new f.Audio("/game/Assets/Sound_" + _option + ".wav"), false, true);
->>>>>>> dbbcfb80a712bc7eb0f32c204f042586f77680b4:game/Main.js
             this.sound.addComponent(cmpAudio);
             this.appendChild(this.sound);
             this.progress++;

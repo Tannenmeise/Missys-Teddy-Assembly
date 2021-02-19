@@ -23,11 +23,7 @@ namespace game {
             setup.setTransition(ACTION.ENTERING, ACTION.WAITING_HAPPY, (_machine) => { // displays happy mood
                 let container: Customer = <Customer>(<faid.ComponentStateMachine<ACTION>>_machine).getContainer();
 
-<<<<<<< HEAD:game/SourceCode/StateMachineCustomer.ts
                 let txtMood: f.TextureImage = new f.TextureImage("../Assets/Customer_Mood_Happy.png");
-=======
-                let txtMood: f.TextureImage = new f.TextureImage("/game/Assets/Customer_Mood_Happy.png");
->>>>>>> dbbcfb80a712bc7eb0f32c204f042586f77680b4:game/StateMachineCustomer.ts
                 let mtrMood: f.Material = new f.Material("Mood", f.ShaderTexture, new f.CoatTextured(clrWhite, txtMood));
                 let cmpMtrMood: f.ComponentMaterial = new f.ComponentMaterial(mtrMood);
                 container.mood.addComponent(cmpMtrMood);
@@ -45,11 +41,7 @@ namespace game {
                 
                 container.mood.removeComponent(container.mood.getComponent(f.ComponentMaterial));
 
-<<<<<<< HEAD:game/SourceCode/StateMachineCustomer.ts
                 let txtMood: f.TextureImage = new f.TextureImage("../Assets/Customer_Mood_Angry.png");
-=======
-                let txtMood: f.TextureImage = new f.TextureImage("/game/Assets/Customer_Mood_Angry.png");
->>>>>>> dbbcfb80a712bc7eb0f32c204f042586f77680b4:game/StateMachineCustomer.ts
                 let mtrMood: f.Material = new f.Material("Mood", f.ShaderTexture, new f.CoatTextured(clrWhite, txtMood));
                 let cmpMtrMood: f.ComponentMaterial = new f.ComponentMaterial(mtrMood);
                 container.mood.addComponent(cmpMtrMood);

@@ -69,7 +69,6 @@ namespace game {
     let activeBooster: boolean = false;
     export let collectedBooster: boolean = false;
     let boosterTimer: f.Time = new f.Time;
-<<<<<<< HEAD:game/SourceCode/Main.ts
     export let boosterSound: f.ComponentAudio = new f.ComponentAudio(new f.Audio("../Assets/Booster.wav"), false, false);
     root.addComponent(boosterSound);
     // #endregion (BOOSTER)
@@ -82,52 +81,25 @@ namespace game {
     let moneySound: f.ComponentAudio = new f.ComponentAudio(new f.Audio("../Assets/Money.wav"), false, false);
     root.addComponent(moneySound);
     let finishSound: f.ComponentAudio = new f.ComponentAudio(new f.Audio("../Assets/Finish.wav"), false, false);
-=======
-    export let boosterSound: f.ComponentAudio = new f.ComponentAudio(new f.Audio("/game/Assets/Booster.wav"), false, false);
-    root.addComponent(boosterSound);
-    // #endregion (BOOSTER)
-    let backgroundMusic: f.ComponentAudio = new f.ComponentAudio(new f.Audio("/game/Assets/BackgroundMusic.wav"), true);
-    root.addComponent(backgroundMusic);
-    let menuMusic: f.ComponentAudio = new f.ComponentAudio(new f.Audio("/game/Assets/MenuMusic.wav"), true, true);
-    root.addComponent(menuMusic);
-    let newCustomerAud: f.ComponentAudio = new f.ComponentAudio(new f.Audio("/game/Assets/NewCustomer.wav"));
-    root.addComponent(newCustomerAud);
-    let moneySound: f.ComponentAudio = new f.ComponentAudio(new f.Audio("/game/Assets/Money.wav"), false, false);
-    root.addComponent(moneySound);
-    let finishSound: f.ComponentAudio = new f.ComponentAudio(new f.Audio("/game/Assets/Finish.wav"), false, false);
->>>>>>> dbbcfb80a712bc7eb0f32c204f042586f77680b4:game/Main.ts
     root.addComponent(finishSound);
 
 
     async function hndLoad(_event: Event): Promise<void> {
-
-<<<<<<< HEAD:game/SourceCode/Main.ts
         await communicate("../Difficulties.json");
-=======
-        await communicate("/game/Difficulties.json");
->>>>>>> dbbcfb80a712bc7eb0f32c204f042586f77680b4:game/Main.ts
 
         const canvas: HTMLCanvasElement = document.querySelector("canvas");
 
         let meshQuad: f.MeshQuad = new f.MeshQuad("Quad");
 
         // #region (ROOM)
-<<<<<<< HEAD:game/SourceCode/Main.ts
         let txtFloor: f.TextureImage = new f.TextureImage("../Assets/Floor.png");
-=======
-        let txtFloor: f.TextureImage = new f.TextureImage("/game/Assets/Floor.png");
->>>>>>> dbbcfb80a712bc7eb0f32c204f042586f77680b4:game/Main.ts
         let mtrFloor: f.Material = new f.Material("Floor", f.ShaderTexture, new f.CoatTextured(clrWhite, txtFloor));
         let floor: faid.Node = new faid.Node("Floor", f.Matrix4x4.ROTATION_X(-90), mtrFloor, meshQuad);
         floor.mtxLocal.scale(f.Vector3.ONE(sizeWall * numWalls));
         floor.getComponent(f.ComponentMaterial).pivot.scale(f.Vector2.ONE(numWalls));
         building.appendChild(floor);
 
-<<<<<<< HEAD:game/SourceCode/Main.ts
         let txtCeiling: f.TextureImage = new f.TextureImage("../Assets/Ceiling.png");
-=======
-        let txtCeiling: f.TextureImage = new f.TextureImage("/game/Assets/Ceiling.png");
->>>>>>> dbbcfb80a712bc7eb0f32c204f042586f77680b4:game/Main.ts
         let mtrCeiling: f.Material = new f.Material("Floor", f.ShaderTexture, new f.CoatTextured(clrWhite, txtCeiling));
         let ceiling: faid.Node = new faid.Node("Floor", f.Matrix4x4.TRANSLATION(new f.Vector3(0, sizeWall, 0)), mtrCeiling, meshQuad);
         ceiling.mtxLocal.rotateX(90);
@@ -148,21 +120,13 @@ namespace game {
         root.appendChild(machines);
 
         // #region (CASH REGISTER)
-<<<<<<< HEAD:game/SourceCode/Main.ts
         let txtCashRegisterBF: f.TextureImage = new f.TextureImage("../Assets/CashRegister_BaseFront.png");
-=======
-        let txtCashRegisterBF: f.TextureImage = new f.TextureImage("/game/Assets/CashRegister_BaseFront.png");
->>>>>>> dbbcfb80a712bc7eb0f32c204f042586f77680b4:game/Main.ts
         let mtrCashRegisterBF: f.Material = new f.Material("CashRegister", f.ShaderTexture, new f.CoatTextured(clrWhite, txtCashRegisterBF));
         let cmpMtrCashRegister: f.ComponentMaterial = new f.ComponentMaterial(mtrCashRegisterBF);
         let cashRegister: GameObject = new GameObject("CashRegister", new f.Vector2(0.555, 0.138), new f.Vector3(-sizeWall * numWalls / 2 + 4, 1.069, -8.125), f.Vector3.ONE(0));
         cashRegister.addComponent(cmpMtrCashRegister);
 
-<<<<<<< HEAD:game/SourceCode/Main.ts
         let txtCashRegisterBS: f.TextureImage = new f.TextureImage("../Assets/CashRegister_BaseSide.png");
-=======
-        let txtCashRegisterBS: f.TextureImage = new f.TextureImage("/game/Assets/CashRegister_BaseSide.png");
->>>>>>> dbbcfb80a712bc7eb0f32c204f042586f77680b4:game/Main.ts
         let mtrCashRegisterBS: f.Material = new f.Material("CashRegister", f.ShaderTexture, new f.CoatTextured(clrWhite, txtCashRegisterBS));
 
         let cashRegisterBL: GameObject = new GameObject("CashRegister", new f.Vector2(0.555, 0.238), new f.Vector3(-0.277, 0.05, -0.277), f.Vector3.Y(90));
@@ -175,11 +139,7 @@ namespace game {
         cashRegisterBR.addComponent(cmpMtrCashRegisterBR);
         cashRegister.appendChild(cashRegisterBR);
 
-<<<<<<< HEAD:game/SourceCode/Main.ts
         let txtCashRegisterBT: f.TextureImage = new f.TextureImage("../Assets/CashRegister_BaseTop.png");
-=======
-        let txtCashRegisterBT: f.TextureImage = new f.TextureImage("/game/Assets/CashRegister_BaseTop.png");
->>>>>>> dbbcfb80a712bc7eb0f32c204f042586f77680b4:game/Main.ts
         let mtrCashRegisterBT: f.Material = new f.Material("CashRegister", f.ShaderTexture, new f.CoatTextured(clrWhite, txtCashRegisterBT));
 
         let cashRegisterBT: GameObject = new GameObject("CashRegister", new f.Vector2(0.555, 0.555), new f.Vector3(0, 0.116, -0.277), f.Vector3.X(-80));
@@ -187,11 +147,7 @@ namespace game {
         cashRegisterBT.addComponent(cmpMtrCashRegisterBT);
         cashRegister.appendChild(cashRegisterBT);
 
-<<<<<<< HEAD:game/SourceCode/Main.ts
         let txtCashRegisterF: f.TextureImage = new f.TextureImage("../Assets/CashRegister_Front.png");
-=======
-        let txtCashRegisterF: f.TextureImage = new f.TextureImage("/game/Assets/CashRegister_Front.png");
->>>>>>> dbbcfb80a712bc7eb0f32c204f042586f77680b4:game/Main.ts
         let mtrCashRegisterF: f.Material = new f.Material("CashRegister", f.ShaderTexture, new f.CoatTextured(clrWhite, txtCashRegisterF));
 
         let cashRegisterF: GameObject = new GameObject("CashRegister", new f.Vector2(0.555, 0.139), new f.Vector3(0, 0.23, -0.555), f.Vector3.ZERO());
@@ -203,11 +159,7 @@ namespace game {
         // #endregion (CASH REGISTER)
 
         // #region (TRASHCAN)
-<<<<<<< HEAD:game/SourceCode/Main.ts
         let txtTrashcan: f.TextureImage = new f.TextureImage("../Assets/Trashcan_Side.png");
-=======
-        let txtTrashcan: f.TextureImage = new f.TextureImage("/game/Assets/Trashcan_Side.png");
->>>>>>> dbbcfb80a712bc7eb0f32c204f042586f77680b4:game/Main.ts
         let mtrTrashcan: f.Material = new f.Material("Trashcan", f.ShaderTexture, new f.CoatTextured(clrWhite, txtTrashcan));
         trashcan = new GameObject("Trashcan", new f.Vector2(0.75, 1), new f.Vector3(sizeWall * numWalls / 2 - 1.5, 0.5, -8), f.Vector3.ZERO());
         let cmpMtrTrashcan: f.ComponentMaterial = new f.ComponentMaterial(mtrTrashcan);
@@ -224,11 +176,7 @@ namespace game {
         trashcan.appendChild(trashcanR);
 
         let trashcanT: GameObject = new GameObject("Trashcan_t", new f.Vector2(0.75, 0.75), new f.Vector3(0, 0.5, -0.375), f.Vector3.X(90));
-<<<<<<< HEAD:game/SourceCode/Main.ts
         let txtTrashcanT: f.TextureImage = new f.TextureImage("../Assets/Trashcan_Top.png");
-=======
-        let txtTrashcanT: f.TextureImage = new f.TextureImage("/game/Assets/Trashcan_Top.png");
->>>>>>> dbbcfb80a712bc7eb0f32c204f042586f77680b4:game/Main.ts
         let mtrTrashcanT: f.Material = new f.Material("Trashcan", f.ShaderTexture, new f.CoatTextured(clrWhite, txtTrashcanT));
         let cmpMtrTrashcanT: f.ComponentMaterial = new f.ComponentMaterial(mtrTrashcanT);
         trashcanT.addComponent(cmpMtrTrashcanT);
@@ -239,11 +187,7 @@ namespace game {
 
         // #region (INSTRUCTIONS)
         instructions = new GameObject("Instructions", new f.Vector2(0.6, 1), new f.Vector3(-sizeWall * numWalls / 2 + 0.001, 1.5, 0), f.Vector3.Y(90));
-<<<<<<< HEAD:game/SourceCode/Main.ts
         let txtInstructions: f.TextureImage = new f.TextureImage("../Assets/Instructions.png");
-=======
-        let txtInstructions: f.TextureImage = new f.TextureImage("/game/Assets/Instructions.png");
->>>>>>> dbbcfb80a712bc7eb0f32c204f042586f77680b4:game/Main.ts
         let mtrInstructions: f.Material = new f.Material("Instructions", f.ShaderTexture, new f.CoatTextured(clrWhite, txtInstructions));
         let cmpMtrInstructions: f.ComponentMaterial = new f.ComponentMaterial(mtrInstructions);
         instructions.addComponent(cmpMtrInstructions);
@@ -422,11 +366,7 @@ namespace game {
     function createWalls(): f.Node {
         let walls: f.Node = new f.Node("Walls");
 
-<<<<<<< HEAD:game/SourceCode/Main.ts
         let txtWall: f.TextureImage = new f.TextureImage("../Assets/Wall.png");
-=======
-        let txtWall: f.TextureImage = new f.TextureImage("/game/Assets/Wall.png");
->>>>>>> dbbcfb80a712bc7eb0f32c204f042586f77680b4:game/Main.ts
         let mtrWall: f.Material = new f.Material("Wall", f.ShaderTexture, new f.CoatTextured(clrWhite, txtWall));
 
         for (let i: number = -numWalls / 2 + 0.5; i < numWalls / 2; i++) {
@@ -439,7 +379,6 @@ namespace game {
             walls.appendChild(new Wall(f.Vector2.ONE(sizeWall), f.Vector3.SCALE(new f.Vector3(i, 0.5, numWalls / 2 - 1), sizeWall), f.Vector3.Y(180))); // invisible back (machines)
         }
         // front:
-<<<<<<< HEAD:game/SourceCode/Main.ts
         let txtDoor: f.TextureImage = new f.TextureImage("../Assets/Door.png");
         let mtrDoor: f.Material = new f.Material("Door", f.ShaderTexture, new f.CoatTextured(clrWhite, txtDoor));
         walls.appendChild(new Wall(f.Vector2.ONE(sizeWall), f.Vector3.SCALE(new f.Vector3(-numWalls / 2 + 0.5, 0.5, -numWalls / 2), sizeWall), f.Vector3.Y(0), mtrDoor)); // door
@@ -447,15 +386,6 @@ namespace game {
         let txtWindowL: f.TextureImage = new f.TextureImage("../Assets/Window_L.png");
         let mtrWindowL: f.Material = new f.Material("WindowL", f.ShaderTexture, new f.CoatTextured(clrWhite, txtWindowL));
         let txtWindowR: f.TextureImage = new f.TextureImage("../Assets/Window_R.png");
-=======
-        let txtDoor: f.TextureImage = new f.TextureImage("/game/Assets/Door.png");
-        let mtrDoor: f.Material = new f.Material("Door", f.ShaderTexture, new f.CoatTextured(clrWhite, txtDoor));
-        walls.appendChild(new Wall(f.Vector2.ONE(sizeWall), f.Vector3.SCALE(new f.Vector3(-numWalls / 2 + 0.5, 0.5, -numWalls / 2), sizeWall), f.Vector3.Y(0), mtrDoor)); // door
-        walls.appendChild(new Wall(f.Vector2.ONE(sizeWall), f.Vector3.SCALE(new f.Vector3(-numWalls / 2 + 1.5, 0.5, -numWalls / 2), sizeWall), f.Vector3.Y(0), mtrWall)); // wall
-        let txtWindowL: f.TextureImage = new f.TextureImage("/game/Assets/Window_L.png");
-        let mtrWindowL: f.Material = new f.Material("WindowL", f.ShaderTexture, new f.CoatTextured(clrWhite, txtWindowL));
-        let txtWindowR: f.TextureImage = new f.TextureImage("/game/Assets/Window_R.png");
->>>>>>> dbbcfb80a712bc7eb0f32c204f042586f77680b4:game/Main.ts
         let mtrWindowR: f.Material = new f.Material("WindowR", f.ShaderTexture, new f.CoatTextured(clrWhite, txtWindowR));
         walls.appendChild(new Wall(f.Vector2.ONE(sizeWall), f.Vector3.SCALE(new f.Vector3(-numWalls / 2 + 2.5, 0.5, -numWalls / 2), sizeWall), f.Vector3.Y(0), mtrWindowL)); // windowL
         walls.appendChild(new Wall(f.Vector2.ONE(sizeWall), f.Vector3.SCALE(new f.Vector3(-numWalls / 2 + 3.5, 0.5, -numWalls / 2), sizeWall), f.Vector3.Y(0), mtrWindowR)); // windowR
@@ -471,15 +401,9 @@ namespace game {
     function createCounter(): f.Node {
         let counter: f.Node = new f.Node("Counter");
 
-<<<<<<< HEAD:game/SourceCode/Main.ts
         let txtCounterSide: f.TextureImage = new f.TextureImage("../Assets/CounterSide.png");
         let mtrCounterSide: f.Material = new f.Material("CounterSide", f.ShaderTexture, new f.CoatTextured(clrWhite, txtCounterSide));
         let txtCounterTop: f.TextureImage = new f.TextureImage("../Assets/CounterTop.png");
-=======
-        let txtCounterSide: f.TextureImage = new f.TextureImage("/game/Assets/CounterSide.png");
-        let mtrCounterSide: f.Material = new f.Material("CounterSide", f.ShaderTexture, new f.CoatTextured(clrWhite, txtCounterSide));
-        let txtCounterTop: f.TextureImage = new f.TextureImage("/game/Assets/CounterTop.png");
->>>>>>> dbbcfb80a712bc7eb0f32c204f042586f77680b4:game/Main.ts
         let mtrCounterTop: f.Material = new f.Material("CounterTop", f.ShaderTexture, new f.CoatTextured(clrWhite, txtCounterTop));
 
         for (let i: number = -numWalls * sizeWall / 3 - 0.5; i < numWalls * sizeWall / 3 + 1; i++) {
@@ -496,15 +420,9 @@ namespace game {
     function createMachines(): f.Node {
         let machines: f.Node = new f.Node("Machines");
 
-<<<<<<< HEAD:game/SourceCode/Main.ts
         let txtMachine: f.TextureImage = new f.TextureImage("../Assets/Machine.png");
         let mtrMachine: f.Material = new f.Material("Appearance", f.ShaderTexture, new f.CoatTextured(clrWhite, txtMachine));
         let txtMachineSide: f.TextureImage = new f.TextureImage("../Assets/Machine_Side.png");
-=======
-        let txtMachine: f.TextureImage = new f.TextureImage("/game/Assets/Machine.png");
-        let mtrMachine: f.Material = new f.Material("Appearance", f.ShaderTexture, new f.CoatTextured(clrWhite, txtMachine));
-        let txtMachineSide: f.TextureImage = new f.TextureImage("/game/Assets/Machine_Side.png");
->>>>>>> dbbcfb80a712bc7eb0f32c204f042586f77680b4:game/Main.ts
         let mtrMachineSide: f.Material = new f.Material("Appearance", f.ShaderTexture, new f.CoatTextured(clrWhite, txtMachineSide));
 
         for (let i: number = 0; i < 4; i++) {
@@ -516,13 +434,8 @@ namespace game {
                 let conveyorBeltTop: GameObject = new GameObject("ConveyorBelt", new f.Vector2(4, 1), new f.Vector3(-6 + i * 6, 1, 11), new f.Vector3(-90, 180, 0));
                 let conveyorBeltFront: GameObject = new GameObject("ConveyorBelt", new f.Vector2(4, 0.5), new f.Vector3(-6 + i * 6, 0.75, 10.5), f.Vector3.Y(180));
 
-<<<<<<< HEAD:game/SourceCode/Main.ts
                 let txtTop: f.TextureImage = new f.TextureImage("../Assets/ConveyorBelt_Top.png");
                 let txtFront: f.TextureImage = new f.TextureImage("../Assets/ConveyorBelt_Front.png");
-=======
-                let txtTop: f.TextureImage = new f.TextureImage("/game/Assets/ConveyorBelt_Top.png");
-                let txtFront: f.TextureImage = new f.TextureImage("/game/Assets/ConveyorBelt_Front.png");
->>>>>>> dbbcfb80a712bc7eb0f32c204f042586f77680b4:game/Main.ts
 
                 let mtrTop: f.Material = new f.Material("Appearance", f.ShaderTexture, new f.CoatTextured(clrWhite, txtTop));
                 let mtrFront: f.Material = new f.Material("Appearance", f.ShaderTexture, new f.CoatTextured(clrWhite, txtFront));
@@ -734,11 +647,7 @@ namespace game {
 
     function generateCustomer(): void { // generates random customer // ISSUE: CUSTOMER HAS TO TAKE FREE SPACE; FIX THE USE OF "INDEX" (or just make max. customers per day = 9)
         let randomAppearance: number = Math.floor(Math.random() * 6 + 1); // generates number from 1 - 6
-<<<<<<< HEAD:game/SourceCode/Main.ts
         let txtCustomer: f.TextureImage = new f.TextureImage("../Assets/Customer_" + randomAppearance + ".png");
-=======
-        let txtCustomer: f.TextureImage = new f.TextureImage("/game/Assets/Customer_" + randomAppearance + ".png");
->>>>>>> dbbcfb80a712bc7eb0f32c204f042586f77680b4:game/Main.ts
         let mtrCustomer: f.Material = new f.Material("Appearance", f.ShaderTexture, new f.CoatTextured(clrWhite, txtCustomer));
         let customer: Customer = new Customer(new f.Vector2(1, 2), new f.Vector3(-10.5, 1, -10), new f.Vector3(0, 0, 0), mtrCustomer);
 
@@ -765,11 +674,7 @@ namespace game {
 
 
     function updateClock(): void { // shift goes from 10am to 4pm
-<<<<<<< HEAD:game/SourceCode/Main.ts
         (<HTMLImageElement>document.getElementById("clockImg")).src = "../Assets/Clock" + clock + ".png";
-=======
-        (<HTMLImageElement>document.getElementById("clockImg")).src = "/game/Assets/Clock" + clock + ".png";
->>>>>>> dbbcfb80a712bc7eb0f32c204f042586f77680b4:game/Main.ts
         if (clock == 6)
             endGame();
     }
@@ -783,11 +688,7 @@ namespace game {
                 currentMachine.productionTime = machineTime * 0.3;
             }
             activeBooster = true;
-<<<<<<< HEAD:game/SourceCode/Main.ts
             (<HTMLImageElement>document.getElementById("boosterImg")).src = "../Assets/Booster_Active.png";
-=======
-            (<HTMLImageElement>document.getElementById("boosterImg")).src = "/game/Assets/Booster_Active.png";
->>>>>>> dbbcfb80a712bc7eb0f32c204f042586f77680b4:game/Main.ts
             boosterTimer.set(0);
         }
     }
@@ -800,11 +701,7 @@ namespace game {
                 currentMachine.productionTime = machineTime;
             }
             activeBooster = false;
-<<<<<<< HEAD:game/SourceCode/Main.ts
             (<HTMLImageElement>document.getElementById("boosterImg")).src = "../Assets/Booster_Empty.png";
-=======
-            (<HTMLImageElement>document.getElementById("boosterImg")).src = "/game/Assets/Booster_Empty.png";
->>>>>>> dbbcfb80a712bc7eb0f32c204f042586f77680b4:game/Main.ts
             collectedBooster = false;
         }
     }
