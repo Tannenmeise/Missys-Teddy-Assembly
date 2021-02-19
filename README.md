@@ -1,6 +1,8 @@
 # Missy's Teddy Assembly (PRIMA exam task)
 
-3D game made with FUDGE
+3D game made with [FUDGE](https://github.com/JirkaDellOro/FUDGE)
+___
+
 
 # PRIMA | WiSe20/21
 
