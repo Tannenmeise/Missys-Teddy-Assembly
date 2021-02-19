@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Missy's Teddy Assembly</title>
+<<<<<<< HEAD:game/Build/Main.html
+    <script src="../FudgeCore/FudgeCore.js"></script>
+    <script src="../FudgeAid/FudgeAid.js"></script>
+    <script src="MissysTeddyAssembly.js"></script>
+    <link rel="stylesheet" href="Stylesheet.css">
+=======
+    <script src="/game/FudgeCore/FudgeCore.js"></script>
+    <script src="/game/FudgeAid/FudgeAid.js"></script>
+    <script src="/game/Build/MissysTeddyAssembly.js"></script>
+    <link rel="stylesheet" href="/game/Build/Stylesheet.css">
+>>>>>>> dbbcfb80a712bc7eb0f32c204f042586f77680b4:game/Main.html
+</head>
+
+<body>
+    <canvas></canvas>
+    <div id="machineInput">
+        <table class="centered">
+            <tr>
+                <th>Customization Options</th>
+            </tr>
+            <tr>
+                <td>---------------------</td>
+            </tr>
+            <tr>
+                <td>current teddy bear:</td>
+            </tr>
+            <tr>
+                <td id="teddyBear"></td>
+            </tr>
+            <tr>
+                <td class="notice">PRESS SPACE TO EXIT</td>
+            </tr>
+        </table>
+        <table id="fur">
+            <tr>
+                <th>fur</th>
+            </tr>
+            <tr>
+                <td>(1) brown</td>
+            </tr>
+            <tr>
+                <td>(2) creme</td>
+            </tr>
+            <tr>
+                <td>(3) gold</td>
+            </tr>
+            <tr>
+                <td>(4) panda</td>
+            </tr>
+        </table>
+        <table id="eyecolor">
+            <tr>
+                <th>eyecolor</th>
+            </tr>
+            <tr>
+                <td>(1) black</td>
+            </tr>
+            <tr>
+                <td>(2) brown</td>
+            </tr>
+            <tr>
+                <td>(3) blue</td>
+            </tr>
+            <tr>
+                <td>(4) green</td>
+            </tr>
+        </table>
+        <table id="accessory">
+            <tr>
+                <th>accessory</th>
+            </tr>
+            <tr>
+                <td>(1) scarf</td>
+            </tr>
+            <tr>
+                <td>(2) bow</td>
+            </tr>
+            <tr>
+                <td>(3) tie</td>
+            </tr>
+            <tr>
+                <td>(4) bowtie</td>
+            </tr>
+        </table>
+        <table id="sound">
+            <tr>
+                <th>sound</th>
+            </tr>
+            <tr>
+                <td>(1) rattle</td>
+            </tr>
+            <tr>
+                <td>(2) bell</td>
+            </tr>
+            <tr>
+                <td>(3) squeak</td>
+            </tr>
+            <tr>
+                <td>(4) jingle</td>
+            </tr>
+        </table>
+        <div>
+            <p class="notice"></p>
+        </div>
+    </div>
+    <div id="instructions">
+        <h1>Instructions</h1>
+        <ul>
+            <li>Interact with everything with just a mouse-click!</li>
+            <li>Walk through the teddy bear production process (starting from the right)</li>
+            <li>Make as few mistakes as possible as the customers don't like to wait for too long</li>
+            <li>Faulty teddy bears can easily be thrown into the trash can by interacting with it</li>
+            <li>Hand the right teddy bear to it's customer. If it's the wrong one, the customer will let you know</li>
+            <li>Get yummy cupcakes by chance for delivering orders and use them to speed up machine production (wow!)</li>
+        </ul>
+        <p>PRESS SPACE TO EXIT</p>
+    </div>
+    <div id="order">
+        <table>
+            <tr>
+                <th>customer's</th>
+                <th>order</th>
+            </tr>
+            <tr>
+                <td>fur:</td>
+                <td id="orderFur">OPTION</td>
+            </tr>
+            <tr>
+                <td>eyecolor:</td>
+                <td id="orderEyecolor">OPTION</td>
+            </tr>
+            <tr>
+                <td>accessory:</td>
+                <td id="orderAccessory">OPTION</td>
+            </tr>
+            <tr>
+                <td>sound:</td>
+                <td id="orderSound">OPTION</td>
+            </tr>
+        </table>
+        <p class="notice">PRESS ENTER TO PUT AWAY</p>
+    </div>
+    <div id="clock">
+<<<<<<< HEAD:game/Build/Main.html
+        <img id="clockImg" src="../Assets/Clock0.png" alt="clock">
+=======
+        <img id="clockImg" src="/game/Assets/Clock0.png" alt="clock">
+>>>>>>> dbbcfb80a712bc7eb0f32c204f042586f77680b4:game/Main.html
+    </div>
+    <div id="scoreDisplay">
+        <h3 id="currentScore">0</h3>
+    </div>
+    <div id="boosterPanel">
+<<<<<<< HEAD:game/Build/Main.html
+        <img id="boosterImg" src="../Assets/Booster_Empty.png" alt="Booster">
+        <h2>E</h2>
+    </div>
+    <div id="menu">
+        <img id="top" src="../Assets/top.png" alt="top">
+        <img id="left" src="../Assets/left.png" alt="left">
+        <img id="right" src="../Assets/right.png" alt="right">
+        <img id="bottom" src="../Assets/bottom.png" alt="bottom">
+        <img id="missy" src="../Assets/Missy.png" alt="Missy">
+        <div id="selection">
+            <img id="logo" src="../Assets/Logo.png" alt="logo">
+=======
+        <img id="boosterImg" src="/game/Assets/Booster_Empty.png" alt="Booster">
+        <h2>E</h2>
+    </div>
+    <div id="menu">
+        <img id="top" src="/game/Assets/top.png" alt="top">
+        <img id="left" src="/game/Assets/left.png" alt="left">
+        <img id="right" src="/game/Assets/right.png" alt="right">
+        <img id="bottom" src="/game/Assets/bottom.png" alt="bottom">
+        <img id="missy" src="/game/Assets/Missy.png" alt="Missy">
+        <div id="selection">
+            <img id="logo" src="/game/Assets/Logo.png" alt="logo">
+>>>>>>> dbbcfb80a712bc7eb0f32c204f042586f77680b4:game/Main.html
+            <h2><button id="start">Start</button></h2>
+            <h2><button id="options">Options</button></h2>
+            <h2><button id="controls">Controls</button></h2>
+            <p>made by Tamara Hezel</p>
+            <p>made with FUDGE</p>
+        </div>
+        <div id="optionsDiv">
+            <h1>Options</h1>
+            <h3>Difficulty: 
+            <a title="Customers don't expect much from you since you're new. Just give them their orders eventually."><button id="difficulty_0" style="background-color: rgb(255, 157, 170)">Intern</button></a> 
+            <a title="Customer expect you to do a good job. But you're just an employee, so you can still get away with a few small mistakes."><button id="difficulty_1">Employee</button></a> 
+            <a title="Everyone has high expectations of you. No mistakes allowed if you want to sell your teddy bears!"><button id="difficulty_2">Owner</button></h3></a>
+            <h3>Mode: 
+            <a title="Work a 6 hour shift (more like 6 minute shift) from 10am to 4pm"><button id="mode_0" style="background-color: rgb(255, 157, 170)">Shift</button></a> 
+            <a title="Time doesn't exist here. You are eternally living in teddy bear making hell. Only the stinging pain of failure may wake you from this nightmare."><button id="mode_1">Endless</button></h3></a>
+            <p><b>Hint:</b></p>
+<<<<<<< HEAD:game/Build/Main.html
+            <img src="../Assets/Booster.png" alt="Cupcake">
+=======
+            <img src="/game/Assets/Booster.png" alt="Cupcake">
+>>>>>>> dbbcfb80a712bc7eb0f32c204f042586f77680b4:game/Main.html
+            <p>Pick up a cupcake to drastically reduce production time for 30 seconds!</p>
+        </div>
+        <div id="controlsDiv">
+            <h1>Controls</h1>
+<<<<<<< HEAD:game/Build/Main.html
+            <img src="../Assets/Controls.png" alt="controls">
+=======
+            <img src="/game/Assets/Controls.png" alt="controls">
+>>>>>>> dbbcfb80a712bc7eb0f32c204f042586f77680b4:game/Main.html
+        </div>
+    </div>
+    <div id="transparentDiv">
+        <p></p>
+    </div>
+    <div id="endscore">
+        <div id="content">
+            <p>Your shift has ended!</p>
+            <h1>Great Job!!!</h1>
+            <p>Calculating Score...</p>
+            <table>
+                <tr>
+                    <th></th>
+                </tr>
+                <tr>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Money:</td>
+                    <td id="money">0$</td>
+                </tr>
+                <tr>
+                    <td>Successful Orders:</td>
+                    <td id="succOrders">0</td>
+                </tr>
+                <tr>
+                    <td>Failed Orders:</td>
+                    <td id="failOrders">0</td>
+                </tr>
+                <tr>
+                    <td>Difficulty:</td>
+                    <td id="difficulty">Normal</td>
+                </tr>
+            </table>
+            <p><b>___________________________</b></p>
+            <table>
+                <tr>
+                    <th>Score:</th>
+                    <td id="score"></td>
+                </tr>
+            </table>
+        </div>
+        <p>PRESS R TO RESTART THE GAME</p>
+    </div>
+
+</body>
+
+</html>

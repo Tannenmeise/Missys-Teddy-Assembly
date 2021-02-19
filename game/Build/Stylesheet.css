@@ -1,0 +1,233 @@
+body {
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;
+    font-family: Calibri;
+}
+
+canvas {
+    width: 100vw;
+    height: 100vh;
+}
+
+#menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgb(255, 246, 246);
+    color: rgb(128, 82, 109);
+    width: 100vw;
+    height: 100vw;
+    text-align: center;
+}
+
+#menu button {
+    background: rgb(255, 249, 243);
+    color: rgb(82, 48, 57);
+    font-size: 4vh;
+    width: 19vw;
+}
+
+#missy {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    padding-left: 7vw;
+    width: 78vh
+}
+
+#logo {
+    width: 94vh;
+}
+
+#selection {
+    position: fixed;
+    right: 0;
+    padding-right: 10vw;
+    padding-top: 6vh;
+}
+
+p {
+    font-size: 1vw;
+}
+
+#top, #bottom {
+    position: fixed;
+    width: 100vw;
+    left: 0;
+}
+
+#top {
+    top: 0;
+}
+
+#bottom {
+    bottom: 0;
+}
+
+#left, #right {
+    position: fixed;
+    height: 100vh;
+    top: 0;
+}
+
+#left {
+    left: 0;
+}
+
+#right {
+    right: 0;
+}
+
+#optionsDiv, #controlsDiv {
+    background-color: rgb(255, 249, 243);
+    color: rgb(82, 48, 57);
+    position: fixed;
+    top: 6vw;
+    left: 5vw;
+    border-width: 0.25vw;
+    border-color: rgb(131, 84, 96);
+    border-radius: 10px;
+    border-style: solid;
+    box-shadow: 0 0 10px 2px rgb(119, 98, 134);
+    visibility: hidden;
+}
+
+#controlsDiv img {
+    width: 35vw;
+}
+
+#optionsDiv button {
+    width: 9.4vw;
+    font-size: 1.5vw;
+}
+
+#machineInput {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: large;
+    display: flex;
+    visibility: hidden;
+    position: absolute;
+    top: 10%;
+    left: 22%;
+    background: rgb(0, 0, 0);
+    color: rgb(255, 196, 219);
+    padding: 1.5vw;
+    border-width: 1vw;
+    border-color: rgb(240, 240, 240);
+    border-radius: 10px;
+    border-style: solid;
+    box-shadow: 0 0 10px 2px black;
+}
+
+#machineInput td, #machineInput th {
+    font-size: 1.5vw;
+}
+
+.centered {
+    text-align: center;
+}
+
+#fur, #eyecolor, #accessory, #sound {
+    visibility: hidden;
+}
+
+#instructions {
+    visibility: hidden;
+    position: fixed;
+    top: 10%;
+    left: 22%;
+    width: 50%;
+    background-color: white;
+    padding: 1.5vw;
+    border-radius: 2px;
+    box-shadow: 0 0 10px 2px rgb(88, 72, 100);
+}
+
+#instructions h1 {
+    text-align: center;
+}
+
+#order {
+    font-family: fantasy;
+    font-size: large;
+    visibility: hidden;
+    position: absolute;
+    top: 2%;
+    left: 2%;
+    background-color: rgb(255, 253, 249);
+    color: rgb(14, 12, 15);
+    padding: 1.5vw;
+    border-radius: 2px;
+    box-shadow: 0 0 10px 2px rgb(88, 72, 100);
+}
+
+.notice {
+    font-size: 1vw;
+    padding-top: 2vh;
+}
+
+#clock {
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+#scoreDisplay {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    margin-bottom: -3vh;
+    color: white;
+}
+
+#boosterPanel {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    background-color: white;
+    border-color:rgb(255, 115, 127);
+    border-width: 8px;
+    border-radius: 10px;
+    border-style: solid;
+}
+
+#boosterPanel h2 {
+    position: fixed;
+    margin-top: -24px;
+    margin-left: -4px;
+    color: white;
+    background-color: rgb(143, 9, 54);
+    border-radius: 20px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+#transparentDiv {
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+#endscore {
+    visibility: hidden;
+    position: fixed;
+    text-align: center;
+    top: 5vh;
+    left: 5vw;
+    height: 90vh;
+    width: 90vw;
+    background-color: rgb(255, 255, 255);
+    color: rgb(14, 12, 15);
+    border-radius: 2px;
+    box-shadow: 0 0 10px 2px rgb(88, 72, 100);
+}
+
+#endscore table {
+    margin-left: auto;
+    margin-right: auto;
+}
